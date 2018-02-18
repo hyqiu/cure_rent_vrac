@@ -4,7 +4,6 @@ from lxml import html
 import sys
 from urllib import parse
 import numpy as np
-#import scrapy
 import urllib
 import pandas as pd
 import re
@@ -44,9 +43,6 @@ def scrap_pictures(final_link):
 
     response = requests.get(final_link) # Récuperation du code source de la page HTML
 
-    #print(response.text)
-
-    #Nb_Pict = int(extract(response.text,'','photos disponibles'))
     try :
         Nb_Pict = int(extract_nb_img(response.text))
     except AttributeError :
